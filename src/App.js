@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import Timer from './components/Timer/Timer';
 
 function App () {
-  const [time, setTime] = useState('');
-
+  
   return (
     <div>
-
+      <Timer />
     </div>
   );
 }
