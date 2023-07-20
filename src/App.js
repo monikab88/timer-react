@@ -1,7 +1,13 @@
-const App = () => {
+import { useState } from 'react';
+
+function App () {
+  const [time, setTime] = useState('');
+
   return (
-    <h1>Start</h1>
+    <div>
+
+    </div>
   );
-};
+}
 
 export default App;
