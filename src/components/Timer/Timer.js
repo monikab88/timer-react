@@ -5,19 +5,22 @@ import React, { useState, useEffect } from 'react';
 const Timer = () => {
     const [time, setTime] = useState(0);
     const [running, setRunning] = useState(false);
+    const [timerInterval, setTimerInterval] = useState(null);
 
     useEffect(() =>  {
-        let interval = null;
+        let timer;
 
         if (running){
-            interval = setInterval(() => {
+            timer = setInterval(() => {
                 setTime((prevTime) => prevTime + 10);
             }, 10);
-        } else if (!running) {
-            clearInterval(interval);
+            setTimerInterval(timer);
+        } else {
+            clearInterval(timerInterval);
+            setTimerInterval(null);
         }
-        return() => clearInterval(interval);
-    }, [running]);
+        return() => clearInterval(timer);
+    }, [running, timerInterval]);
 
     return (
         <div className={styles.timer}>
