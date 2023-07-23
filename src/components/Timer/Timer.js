@@ -20,7 +20,7 @@ const Timer = () => {
             setTimerInterval(null);
         }
         return() => clearInterval(timer);
-    }, [running, timerInterval]);
+    }, [running]);
 
     return (
         <div className={styles.timer}>
